@@ -6,6 +6,9 @@ require("dotenv").config()
 app.use(express.static(__dirname + '/views'));
 app.use(express.static(__dirname + '/public'))
 
+//! Authentication
+
+
 //! URLS
 
 function dashboard(client){
@@ -13,8 +16,8 @@ function dashboard(client){
         res.sendFile(path.join(__dirname + 'views/index.html'))
     })
 
-    app.listen(3000, () => {
-        console.log('Started server on port 3000.')
+    app.listen(8080, () => {
+        console.log('Started server on port 8080.')
     })
 }
 
