@@ -1,19 +1,22 @@
+require("dotenv").config();
 const fs = require('node:fs')
 const path = require('node:path')
 const { Client, Collection, Events, GatewayIntentBits} = require('discord.js')
 const { dashboard } = require('./Web/index')
-const { loadCommands } = require('./Handlers/commands')
+const { CommandKit } = require('commandkit')
 
-const client = new Client({ intents: [GatewayIntentBits.Guilds] })
-require("dotenv").config();
+const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMembers, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] })
 
-client.commands = new Collection()
+new CommandKit({
+    client,
+    commandsPath: path.join(__dirname, 'Commands'),
+    eventsPath: path.join(__dirname, 'Events'),
+    bulkRegister: true
+})
 
 function load(){
     client.login("place_your_token_here")
-    loadCommands(client)
     dashboard(client)
-    return console.log(`logged in into Arktos`)
 }
 
 load()
