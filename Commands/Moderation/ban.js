@@ -17,6 +17,7 @@ module.exports = {
         const embed = new EmbedBuilder()
             .setTitle(`Banned ${target}`)
             .setDescription(`${interaction.user.username} banned \*\*\*${target}\*\*\* \n Reason: \`\`\`${reasoning}\`\`\``)
+            .setColor("#df2935")
             .setTimestamp()
         
         interaction.reply({ embeds: [embed] })
