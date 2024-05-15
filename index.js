@@ -2,8 +2,8 @@ require("dotenv").config();
 const fs = require('node:fs')
 const path = require('node:path')
 const { Client, Collection, Events, GatewayIntentBits} = require('discord.js')
-const { dashboard } = require('./Web/index')
 const { CommandKit } = require('commandkit')
+const { token } = require('./config.json')
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMembers, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] })
 
@@ -15,8 +15,7 @@ new CommandKit({
 })
 
 function load(){
-    client.login("place_your_token_here")
-    dashboard(client)
+    client.login(token)
 }
 
 load()
