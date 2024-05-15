@@ -1,5 +1,5 @@
 # Arktos, the all in one bot.
-Arktos is a open source bot for everyone to use! Developed by arkseek. 
+Arktos is a open source bot for everyone to use! Developed by hamzascript and all of its contributors. 
 # Packages
 - CommandKit which has a Event handler and a Command handler (+ more!) built into it which makes the code easier to read and understand (https://commandkit.js.org)
 - Discord.js v14
